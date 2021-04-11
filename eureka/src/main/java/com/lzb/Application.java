@@ -9,7 +9,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * @author lizebin
  */
 //@EnableEurekaServer
-//@EnableEurekaClient
 @SpringBootApplication
 public class Application {
 
