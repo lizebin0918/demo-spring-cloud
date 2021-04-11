@@ -2,6 +2,7 @@
 DS_*
 .idea/*
 target/*
+**/target
 # Compiled class file
 *.class
 
