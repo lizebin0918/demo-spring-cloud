@@ -1,4 +1,6 @@
+*.iml
 DS_*
+.idea/*
 # Compiled class file
 *.class
 
