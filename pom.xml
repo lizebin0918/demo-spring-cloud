@@ -6,7 +6,7 @@
     <artifactId>demo-spring-could</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>demo-sharding-jdbc</name>
+    <name>demo-spring-cloud</name>
     <url>http://maven.apache.org</url>
 
     <properties>
