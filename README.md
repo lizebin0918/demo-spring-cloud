@@ -8,3 +8,7 @@
    * fetch registry:拉取注册列表并缓存到本地
    * time Lag：同步时间延迟
    * 同步采用http请求
+   
+### Ribbon 负载均衡
+
+   * 负载均衡算法： 
