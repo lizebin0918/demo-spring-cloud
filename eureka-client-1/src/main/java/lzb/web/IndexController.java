@@ -38,10 +38,11 @@ public class IndexController {
 
         List<String> serviceIds = client.getServices();
         for (String serviceId : serviceIds) {
+            List<ServiceInstance> services = client.getInstances(serviceId);
             //完成负载均衡
             ServiceInstance instance = lb.choose(serviceId);
             String url = "http://" + instance.getHost() + ":" + instance.getPort() + "/hello";
-            List<ServiceInstance> services = client.getInstances(serviceId);
+            System.out.println(url);
         }
         System.out.println(ToStringBuilder.reflectionToString(client.getServices()));
         return "client";
