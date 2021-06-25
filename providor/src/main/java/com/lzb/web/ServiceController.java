@@ -1,4 +1,4 @@
-package lzb.web;
+package com.lzb.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
