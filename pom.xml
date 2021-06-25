@@ -9,9 +9,9 @@
     <modules>
         <module>eureka-server</module>
         <module>providor</module>
+        <module>consumer</module>
     </modules>
     <name>demo-spring-cloud</name>
-    <url>http://maven.apache.org</url>
 
     <properties>
         <java.version>1.8</java.version>
@@ -83,6 +83,13 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.46</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
