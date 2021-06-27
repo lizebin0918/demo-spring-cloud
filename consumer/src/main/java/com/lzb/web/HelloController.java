@@ -2,8 +2,12 @@ package com.lzb.web;
 
 import com.lzb.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * <br/>
@@ -21,6 +25,22 @@ public class HelloController {
     @GetMapping("")
     public String hello() {
         return helloService.hello();
+    }
+
+    /**
+     * ribbon 完成客户端的负载均衡
+     */
+    @Autowired
+    private LoadBalancerClient loadBalancerClient;
+
+    @GetMapping("/lb")
+    public void lb() {
+        ServiceInstance instance = loadBalancerClient.choose("providor");
+        String url = "http://" + instance.getHost() + ":" + instance.getPort() + "/hello";
+        RestTemplate rt = new RestTemplate();
+        System.out.println("url:" + url);
+        String response = rt.getForObject(url, String.class);
+        System.out.println("response:" + response);
     }
 
 }
