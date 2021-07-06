@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDateTime;
+
 /**
  * <br/>
  * Created on : 2021-06-25 16:10
@@ -25,6 +27,17 @@ public class HelloController {
     @GetMapping("")
     public String hello() {
         return helloService.hello();
+    }
+
+    @GetMapping("/sleep")
+    public String sleep() {
+        System.out.println(LocalDateTime.now());
+        return helloService.sleep();
+    }
+
+    @GetMapping("/exception")
+    public String exception() {
+        return helloService.exception();
     }
 
     /**

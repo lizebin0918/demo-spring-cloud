@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <br/>
@@ -31,6 +32,22 @@ public class IndexController {
     @RequestMapping("/hello")
     public String hello() {
         return "hello-" + port;
+    }
+
+    @RequestMapping("/exception")
+    public String exception() {
+        int i = 1/0;
+        return "exception";
+    }
+
+    @RequestMapping("/sleep")
+    public String sleep() {
+        try {
+            TimeUnit.SECONDS.sleep(4);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "sleep";
     }
 
     @Bean

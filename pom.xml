@@ -10,6 +10,7 @@
         <module>eureka-server</module>
         <module>providor</module>
         <module>consumer</module>
+        <module>gateway</module>
     </modules>
     <name>demo-spring-cloud</name>
 
