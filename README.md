@@ -61,7 +61,7 @@
  > 可以看做是Feign的扩展，如@RequesMapping等等。
  > OpenFeign的@FeignClient可以解析SpringMVC的@RequestMapping注解下的**接口**，
  > 并通过动态代理的方式产生实现类，实现类中做负载均衡并调用其他服务。
-
+ 
 * Java接口与Rest提供的元信息如何映射
 * `@FeignClient`所指定的服务（应用）可能用到了服务发现，一个服务可能对应多个实例
 * `@EbableFeginClients`如何感知或加载标注`@FeignClient`的配置类（Bean）
